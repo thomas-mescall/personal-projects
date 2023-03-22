@@ -16,7 +16,10 @@ const paddleSpeed = 100;
 let playerPaddleY = canvas.height / 2 - paddleHeight / 2;
 
 // Set the colors of the sides of the square
-let getRandomColor = Math.floor(Math.random()*16777215).toString(16);
+// let getRandomColor = Math.floor(Math.random()*16777215).toString(16);
+function getRandomColor() {
+    return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}
 let topColor = getRandomColor;
 let bottomColor = getRandomColor;
 let leftColor = getRandomColor;
@@ -62,20 +65,20 @@ function draw() {
     // Bounce the ball off the walls
     if (ballY - ballRadius < 0) {
         ballSpeedY = -ballSpeedY;
-        topColor = "purple";
+        topColor = getRandomColor;
     } else if (ballY + ballRadius > canvas.height) {
         ballSpeedY = -ballSpeedY;
-        bottomColor = "orange";
+        bottomColor = getRandomColor;
     }
 
     if (ballX - ballRadius < 0) {
         ballSpeedX = -ballSpeedX;
-        leftColor = "pink";
+        leftColor = getRandomColor;
     } else if (ballX + ballRadius > canvas.width - paddleWidth &&
         ballY + ballRadius > playerPaddleY &&
         ballY - ballRadius < playerPaddleY + paddleHeight) {
         ballSpeedX = -ballSpeedX;
-        rightColor = "grey";
+        rightColor = getRandomColor;
     }
 
     if (ballX + ballRadius > canvas.width) {

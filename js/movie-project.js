@@ -14,27 +14,28 @@ document.addEventListener('DOMContentLoaded', function (){
         // empty string to contain movie info
         let movieList = "";
         let i;
+        let count = 0;
         // for loop to create movie info for empty string
-        for (i = 0; i < data.length; i++) {
+        for (i = 0; i < 5; i++) {
             let title = data[i].title;
             // let director = data[i].director;
             let rating = data[i].rating;
             let genre = data[i].genre;
+            count++;
             // let id = data[i].id;
             // generating movie info for html
             if(genre === undefined){
                 genre = "Family";
             }
-            movieList += '<container>' +
-                '<div class="cards modal-body">' +
-                '<h3 class="fs-5">' + "Title: " + title + '</h3>' +
-                // '<p>' + director + '</p>' +
-                '<p>' + '<sub>' + "Rating: " + rating + '</sub>' + '</p>' +
-                '<p>' + '<sub>' + "Genre: " + genre + '</sub>' + '</p>' +
-                // '<p>' + id + '</p>' +
-                '<button>' + "click here for trailer"  + '</button>' +
-                '</div>' +
-                '</container>';
+                movieList += '<container>' +
+                    '<div class="cards modal-body">' +
+                    '<h3 class="fs-5">' + "Title: " + title + '</h3>' +
+                    // '<p>' + director + '</p>' +
+                    '<p>' + '<sub>' + "Rating: " + rating + '</sub>' + '</p>' +
+                    '<p>' + '<sub>' + "Genre: " + genre + '</sub>' + '</p>' +
+                    // '<p>' + id + '</p>' +
+                    '</div>' +
+                    '</container>';
         }
         $('.movies').html(movieList);
     })
@@ -92,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function (){
         }
         $('.movieSelection').html(movieList);
         $('.movieDeleteSelect').html(movieList);
+        $('.movieFilterTitle').html(movieList);
     })
 
 // user input for editing movie from selector
@@ -122,6 +124,22 @@ document.addEventListener('DOMContentLoaded', function (){
             url: 'https://better-glowing-algebra.glitch.me/movies/' +movieDelete.value
         });
     });
+
+    // let buttonControlFour = document.querySelector('.btnFour');
+    // let movieFilterTitle = document.querySelector('.movieFilterTitle');
+    // buttonControlFour.addEventListener('click', function (e){
+    //
+    // })
+    // function clickControl() {
+    //     let spinControlOne = document.getElementById('.btnTwo');
+    //     let spinner = document.querySelector('.spinner-border');
+    //     spinControlOne.disabled = true;
+    //     spinner.style.display = 'block';
+    //     //possible ajax call
+    //     spinner.style.display = 'none';
+    //     spinControlOne.disabled = 'false';
+    // }
+    // document.getElementById('btnTwo').addEventListener('click', clickControl);
 
 });
 

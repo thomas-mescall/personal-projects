@@ -9,64 +9,122 @@
   <script src="../js/movie-project.js"></script>
   <!--    inserting bootstrap css-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<!--    inserting font awesome-->
+    <script src="https://kit.fontawesome.com/60b822ab43.js" crossorigin="anonymous"></script>
   <!--inserting css -->
   <link href="../css/movie-project.css" rel="stylesheet">
 
 </head>
 <body>
-<nav class="navbar sticky-top navbar-light" style="background-color: rgba(45,45,49,0.85);">
-  <a class="" href="#">Movies</a>
-  <h4 class="bs-danger-text"><i>Movies</i></h4>
-  <a class="" href="#">New & Popular</a>
-</nav>
+
+    <nav class="navbar sticky-top navbar-light" style="background-color: rgba(45,45,49,0.85);">
+      <input type="text" placeholder="search..." class="form-control-sm"></input>
+      <h4 class="text-white">Movies</h4>
+      <a class="" href="#">New & Popular</a>
+    </nav>
 
 <!--loading message before movie info-->
 <!--<div class="loading"></div>-->
 
+<div class="cover">
+
+  <form action="#" class="flex-form">
+
+    <div class="boxOne">
+
 <!--form for editing existing movies-->
-<form>
-  <div>
-    <button class="btnTwo">Edit a Movie</button>
-    <select class="movieSelection form-select-sm" aria-label="Default select example">
-      <option selected>Open to Edit</option>
-      <option class="movies">One</option>
-    </select>
-    <input type="text" placeholder="edit movie title..." class="editMovie form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
-    <input type="text" placeholder="edit movie rating" class="editMovieTwo form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
-  </div>
-</form>
+      <form>
+        <div>
+          <button class="btnTwo" id="btnTwo">Edit a Movie</button>
+            <span class="spinner spinner-border spinner-border-sm" role="status">
+            <span class="sr-only"></span>
+            </span>
+          <select class="movieSelection form-select-sm" aria-label="Default select example">
+            <option selected>Open to Edit</option>
+            <option class="movies">One</option>
+          </select>
+          <input type="text" placeholder="edit movie title..." class="editMovie form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
+          <input type="text" placeholder="edit movie rating" class="editMovieTwo form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
+        </div>
+      </form>
 
-<br>
-<!--form for adding new movies to existing list-->
-<form>
-  <div class="input-group input-group-lg">
-    <button class="btnOne">Add New Movie</button>
-    <input type="text" placeholder="add movie title..." class="movieTitle form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
-    <input type="text" placeholder="add movie rating..." class="movieRating form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
-  </div>
-</form>
+      <br>
+      <!--form for adding new movies to existing list-->
+      <form>
+        <div class="input-group input-group-lg">
+          <button class="btnOne">Add New Movie</button>
+          <input type="text" placeholder="add movie title..." class="movieTitle form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
+          <input type="text" placeholder="add movie rating..." class="movieRating form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
+        </div>
+      </form>
 
-<br>
-<!--form for deleting existing movies-->
-<form>
-  <div>
-    <button class="btnThree">Delete a Movie</button>
-    <select class="movieDeleteSelect form-select-sm" aria-label="Default select example">
-      <option selected>Open to Delete</option>
-      <option class="movies">One</option>
-    </select>
-  </div>
-</form>
+      <br>
+      <!--form for deleting existing movies-->
+      <form>
+        <div>
+          <button class="btnThree">Delete a Movie</button>
+          <select class="movieDeleteSelect form-select-sm" aria-label="Default select example">
+            <option selected>Open to Delete</option>
+            <option class="movies">One</option>
+          </select>
+        </div>
+      </form>
 
-<hr>
+        <!--        dropdown containing all movies-->
+        <div>
+            <label class="text-white" for="movieFilterTitle"><i>All Movies...</i></label>
+            <select class="movieFilterTitle form-select-md" id="movieFilterTitle"  aria-label="Default select example">
+                <option class="" selected></i></option>
+            </select>
+        </div>
 
-<!--movie info-->
-<div class="container">
-  <div class="row">
-    <div class="col-4 movies text-center movies-row"></div>
-  </div>
+        <br>
+
+<!--        title bar for top three movies-->
+
+
+      <!--movie info-->
+      <div class="container">
+        <div class="row">
+          <div class="col-4 movies text-center movies-row"></div>
+            <article class="form-select-sm" aria-label="Default select example">
+                <p class="movieDropDown"></p>
+            </article>
+        </div>
+      </div>
+
+        <footer class="myFoot">
+            <div class="row">
+                <div class="col-4">
+                    <p>Help</p>
+                    <p>About</p>
+                    <p>Who we are</p>
+                    <p>Feedback</p>
+                </div>
+                <div class="col-4">
+                    <p>Critic Submission</p>
+                    <p>Licensing</p>
+                    <p>Advertise With Us</p>
+                    <p>Careers</p>
+                </div>
+                <div class="col-4">
+                    <h6>FOLLOW US</h6>
+                    <p>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+        <video autoplay muted loop class="vidOne">
+          <source src="../vid/movie-theatre.mp4">
+        </video>
+  </form>
 </div>
-
 <!--inserting bootstrap js-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>

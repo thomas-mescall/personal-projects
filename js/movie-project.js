@@ -1,8 +1,5 @@
 "use strict";
 
-// // loading message to be replaced with movie info
-let loading = alert("Page loading...");
-
 // listener for loading listeners
 document.addEventListener('DOMContentLoaded', function (){
 
@@ -16,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function (){
         let i;
         let count = 0;
         // for loop to create movie info for empty string
-        for (i = 0; i < 5; i++) {
+        for (i = 0; i < 6; i++) {
             let title = data[i].title;
             // let director = data[i].director;
             let rating = data[i].rating;
@@ -27,9 +24,11 @@ document.addEventListener('DOMContentLoaded', function (){
             if(genre === undefined){
                 genre = "Family";
             }
-                movieList += '<container>' +
-                    '<div class="cards modal-body">' +
-                    '<h3 class="fs-5">' + "Title: " + title + '</h3>' +
+                movieList += '<container class="dotCon col">' +
+                    '<img class="dotImg" src="../img/optical-illusion-1.jpeg" alt=".">' +
+                    '<div class="centered">' +
+                    '<h3 class="fs-5">' + "Title: " + '</h3>' +
+                    '<h4>' + title + '</h4>' +
                     // '<p>' + director + '</p>' +
                     '<p>' + '<sub>' + "Rating: " + rating + '</sub>' + '</p>' +
                     '<p>' + '<sub>' + "Genre: " + genre + '</sub>' + '</p>' +
